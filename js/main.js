@@ -126,17 +126,17 @@ function Submit(object) {
 
 
 function upgradeButtons() {
-	if ($("#upgradeSpan").length) {
-		$("#upgradeSpan").html(' UPGRADE for even more words.');
-	} else {
-		$("#upgradeCell").html('<span class="buttons"><button id="upgrade">upgrade</button></span>');
-		// Get the button that opens the modal
-		btn = document.getElementById("upgrade")
-		// When the user clicks on the button, open the modal
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
+	if ($("#dino").length) return;
+	
+	$("#upgradeSpan").html('<span class="buttons"><button id="upgrade">UPGRADE</button></span> for even more words.');
+	$("#upgradeCell").html('<span class="buttons"><button id="upgrade">upgrade</button></span>');
+	// Get the button that opens the modal
+	btn = document.getElementById("upgrade")
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+		modal.style.display = "block";
 	}
+
 }
 
 
