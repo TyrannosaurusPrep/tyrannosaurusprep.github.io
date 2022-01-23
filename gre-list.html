@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Tyrannosaurus Prep is a game that quizzes you over SAT and GRE vocab words." />
+    <meta name="keywords" content="sat,vocab,gre,vocabulary,practice,quiz,questions,game,prep" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <link type="text/css" rel="stylesheet" href="css/mainbuttons.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>GRE Word List | Tyrannosaurus Prep</title>
+	
+  </head>
+  <body>
+
+  	<script>
+	const game = "gre";
+
+	$("body").addClass(game);
+
+	var score = localStorage.getItem(game + "-score");
+
+	const urlParams = new URLSearchParams(window.location.search);
+	var key = urlParams.get('key');
+	if(!key) {
+		key = localStorage.getItem("key");
+	}
+	</script>  
+  
+    <div id="header">
+	<a href="tyrannosaurusprep.com"><img src="images/logo.png" id="logo" style="height: 90px; width: auto;" /></a>  
+	</div>
+	
+
+
+<div id="content" class="outlined">
+
+<h3 id="jsmessage">This word list requires javascript turned on.</h3>
+<h3><p>Enjoy this GRE vocab word list!<span id="upgradeSpan"></span></p>
+
+<p>And be sure to try out our <a href="gre.html">GRE vocab practice game</a>.</p></h3>
+
+<div id="wordslist"></div>
+
+
+</div>
+		
+    </div>
+    <div id="footer">
+
+      <p>Copyright &copy; 2022 <a href="http://www.tyrannosaurusprep.com/">Tyrannosaurus Prep</a></p>
+      <p><a href="http://www.tyrannosaurusprep.com/sat.html">SAT vocab practice game</a> | <a href="http://www.tyrannosaurusprep.com/gre.html">GRE vocab practice game</a></p>
+      <p><a href="http://www.tyrannosaurusprep.com/sat-list.html">SAT word list</a> | <a href="http://www.tyrannosaurusprep.com/gre-list.html">GRE word list</a></p>
+      <p>email: webmaster at TyrannosaurusPrep dot com</p>
+    </div>
+	
+    <script src="js/words.js"></script>
+    <script>
+	$(document).ready(function() {
+		LoadUpgrade(PopulateList);
+	});
+	</script>
+	<script src="js/main.js"></script>
+	
+	
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Tyrannosaurus Prep is a game that quizzes you over SAT vocab and GRE vocab words." />
+    <meta name="keywords" content="sat,vocab,gre,vocabulary,practice,quiz,questions,game,prep" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <link type="text/css" rel="stylesheet" href="css/mainbuttons.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>GRE Vocab Game | Tyrannosaurus Prep</title>
+	
+
+  </head>
+  <body>
+  
+  	<script>
+	const game = "gre";
+
+	$("body").addClass(game);
+
+	var score = localStorage.getItem(game + "-score");
+
+	const urlParams = new URLSearchParams(window.location.search);
+	var key = urlParams.get('key');
+	if(!key) {
+		key = localStorage.getItem("key");
+	}
+	</script>
+
+    <div id="header">
+	<table style="margin: auto;"><tr><td>
+	<a href="tyrannosaurusprep.com"><img src="images/logo.png" id="logo" style="height: 90px; width: auto;" /></a>
+	</td>
+	<td style="width: 10%;"></td>
+	<td style="vertical-align: bottom;">
+  <div id="side" class="outlined">
+      <table style="margin: auto;"><tr><td><span id="label">GRE Vocabulary</span></td><td id="upgradeCell"></td></tr></table>
+	<table><tr><td>
+  <div id="progressbg">
+    <div id="progressmid">
+      <div id="progressbar" style="width: 0%;"></div>
+	  <span id="progresstext">Level <span id="levelNum">1</span></span>
+    </div>
+  </div></td>
+  <td><span class="buttons"><button id="reset" onClick="ResetConfirm();"><img src="images/reset.png" style="height: 15px; width: auto;" /></button></span>
+  </td></tr></table>
+      
+	</div>
+  </td>
+  </tr></table>
+  
+  
+
+	</div>
+	
+
+
+<div id="content" class="outlined">
+<div class="question">
+  <h3>This game requires javascript turned on.</h3>
+  <table id="choicestable">
+    <tr class="0">
+      <td class="buttons"><button onclick="Submit(this);"><b class="black"></b></button></td>
+      <td><span class="hide"></span></td></tr>
+    <tr class="1">
+      <td class="buttons"><button onclick="Submit(this);"><b class="black"></b></button></td>
+      <td><span class="hide"></span></td></tr>
+    <tr class="2">
+      <td class="buttons"><button onclick="Submit(this);"><b class="black"></b></button></td>
+      <td><span class="hide"></span></td></tr>
+    <tr class="3">
+      <td class="buttons"><button onclick="Submit(this);"><b class="black"></b></button></td>
+      <td><span class="hide"></span></td></tr>
+    <tr class="4">
+      <td class="buttons"><button onclick="Submit(this);"><b class="black"></b></button></td>
+      <td><span class="hide"></span></td></tr>
+  </table>
+  <table id="report">
+    <tr>
+      <td id="filler">.</td>
+      <td id="grade" class="hide"></td>
+      <td id="nextCell" class="hide"></td>
+    </tr>
+  </table>
+</div>
+		
+    </div>
+    <div id="footer">
+
+      <p>Copyright &copy; 2022 <a href="http://www.tyrannosaurusprep.com/">Tyrannosaurus Prep</a></p>
+      <p><a href="http://www.tyrannosaurusprep.com/sat.html">SAT vocab practice game</a> | <a href="http://www.tyrannosaurusprep.com/gre.html">GRE vocab practice game</a></p>
+      <p><a href="http://www.tyrannosaurusprep.com/sat-list.html">SAT words list</a> | <a href="http://www.tyrannosaurusprep.com/gre-list.html">GRE words list</a></p>
+      <p>email: webmaster at TyrannosaurusPrep dot com</p>
+    </div>
+	
+    <script src="js/words.js"></script>
+	<script>
+	$(document).ready(function() {
+		if (!score) {
+			score = 0;
+		} else {
+			score = parseInt(score);
+		}
+		
+		UpdateProgress();
+		LoadUpgrade(GetNextQuestion);
+	});
+	</script>
+	<script src="js/main.js"></script>
+	
+	
+  </body>
+</html>
