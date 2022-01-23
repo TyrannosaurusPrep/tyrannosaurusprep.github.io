@@ -86,6 +86,7 @@
 </div>
 		
     </div>
+	
     <div id="footer">
 
       <p>Copyright &copy; 2022 <a href="http://www.tyrannosaurusprep.com/">Tyrannosaurus Prep</a></p>
@@ -93,9 +94,70 @@
       <p><a href="http://www.tyrannosaurusprep.com/sat-list.html">SAT words list</a> | <a href="http://www.tyrannosaurusprep.com/gre-list.html">GRE words list</a></p>
       <p>email: webmaster at TyrannosaurusPrep dot com</p>
     </div>
-	
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	<table><tr>
+	<td>
+		<img src="images/dino.png" id="dino" style="width: 100px; height: auto;" />
+	</td>
+    <td style="width: 100%">
+		<p>For just $3.99, you can access all five levels<br /> of Tyrannosaurus Prep for three months!</p>
+
+		<table style="width: 100%;"><tr><td style="width: 40%;">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_xclick">
+		<input type="hidden" name="business" value="96663QRQKB9JS">
+		<input type="hidden" name="lc" value="US">
+		<input type="hidden" name="item_name" value="Three months of access to all five levels of Tyrannosaurus Prep">
+		<input type="hidden" name="amount" value="3.99">
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="hidden" name="button_subtype" value="services">
+		<input type="hidden" name="tax_rate" value="0.000">
+		<input type="hidden" name="shipping" value="0.00">
+		<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+		</td>
+		<td style="width: 20%; position: relative; bottom: 8px;">or</td>
+		<td style="width: 40%; position: relative; bottom: 10px;">
+		<a href="https://checkout.opennode.com/p/6eb24af1-5cb1-41b4-afbf-77bafe7191d2" target="_blank"><img style="width:140px;" src="https://app.opennode.com/pay-with-bitcoin.svg"/></a>
+		</td>
+	</td>
+	</tr></table>
+  </div>
+
+</div>
+
     <script src="js/words.js"></script>
 	<script>
+	
+	// Get the modal
+	var modal = document.getElementById("myModal");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+
+	var btn;
+
 	$(document).ready(function() {
 		if (!score) {
 			score = 0;

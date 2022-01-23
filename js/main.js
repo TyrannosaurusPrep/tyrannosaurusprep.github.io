@@ -80,7 +80,7 @@ function UpdateScore(iscorrect) {
 			if (score == 200) {
 				score = 199;
 				if (!upgradeAlert) {
-					alert("You need to UPGRADE if you want to play the additional three levels.")
+					modal.style.display = "block";
 					upgradeAlert = true;
 				}
 			}
@@ -126,8 +126,17 @@ function Submit(object) {
 
 
 function upgradeButtons() {
-	$("#upgradeCell").html('<span class="buttons"><button id="upgrade">upgrade</button></span>');
-	$("#upgradeSpan").html(' UPGRADE for even more words.');	
+	if ($("#upgradeSpan").length) {
+		$("#upgradeSpan").html(' UPGRADE for even more words.');
+	} else {
+		$("#upgradeCell").html('<span class="buttons"><button id="upgrade">upgrade</button></span>');
+		// Get the button that opens the modal
+		btn = document.getElementById("upgrade")
+		// When the user clicks on the button, open the modal
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+	}
 }
 
 
@@ -187,4 +196,9 @@ if (game == "gre") {
 } else if (game == "sat") {
 	satWords();
 }
+
+
+
+
+
 
