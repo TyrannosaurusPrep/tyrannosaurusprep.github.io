@@ -157,7 +157,7 @@ function LoadUpgrade(callback=function(){}) {
 		function scriptLoaded() {
 			localStorage.setItem("key", key);
 			if (game == "home") {
-				$("#upgraded").html("<p>Thanks for your support! Enjoy access to all the levels!</p><p>Make sure to save this link:<div id='upgradeUrl'>www.tyrannosaurusprep.com?key="+key+"</div>You can apply your upgrade to other browsers and devices simply by visiting that url.</p>");
+				$("#upgraded").html("<p>Thanks for your support! Enjoy access to all the levels!</p><p>Make sure to save this link:<div id='upgradeUrl'>tyrannosaurusprep.com?key="+key+"</div>You can apply your upgrade to other browsers and devices simply by visiting that url.</p>");
 			} else if (game == "gre") {
 				greWords2();
 			} else if (game == "sat") {
