@@ -143,7 +143,7 @@ function upgradeButtons() {
 function LoadUpgrade(callback=function(){}) {
 	if (key) {
 		let myScript = document.createElement("script");
-		myScript.setAttribute("src", "https://gre.tyrannosaurusprep.com/js/" + key + ".js");
+		myScript.setAttribute("src", "http://gre.tyrannosaurusprep.com/js/" + key + ".js");
 		document.body.appendChild(myScript);
 		myScript.addEventListener("error", scriptError, false);
 		myScript.addEventListener("load", scriptLoaded, false);
