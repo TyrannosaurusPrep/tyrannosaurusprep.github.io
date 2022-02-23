@@ -372,3 +372,17 @@ button#upgrade {
   cursor: pointer;
 }
 
+.announcement-banner {
+  background: #ffd391;
+  font-size: 20px;
+  padding: 5px;
+}
+
+#bannercloser {
+	position: absolute;
+	right: 10px;
+}
+
+.announcement-banner.disabled {
+  display: none;
+}

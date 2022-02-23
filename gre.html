@@ -25,7 +25,32 @@
 	var key = urlParams.get('key');
 	if(!key) {
 		key = localStorage.getItem("key");
+	}	
+	</script>
+	
+	<div id="mainbanner" class="announcement-banner">
+		<div class="container-banner">
+			<strong>NEW Android app: search for Tyrannosaurus Prep in the Google Play app store!</strong>
+			<button id="bannercloser">X</button>
+		</div>
+	</div>
+	
+	<script>
+	const bannercloser = document.getElementById('bannercloser');
+	const banner = document.getElementById('mainbanner');
+	
+	let bannerclosed = localStorage.getItem("bannerclosed");
+	if(bannerclosed) {
+		if (Date.now() - parseInt(bannerclosed) < 10 * 24 * 60 * 60 * 1000) {// ten days
+			banner.classList.add('disabled');
+		}
 	}
+	bannercloser.addEventListener('click', () => {
+		banner.classList.add('disabled');
+		localStorage.setItem("bannerclosed", Date.now())
+	})
+
+
 	</script>
 
     <div id="header">
