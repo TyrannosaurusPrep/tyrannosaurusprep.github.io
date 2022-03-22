@@ -9,11 +9,11 @@
     <link type="text/css" rel="stylesheet" href="css/mainbuttons.css" />
     <link rel="icon" href="images/favicon.png" />
     <title>GRE Vocab Game | Tyrannosaurus Prep</title>
-	
+
 
   </head>
   <body>
-  
+
   	<script>
 	const game = "gre";
 
@@ -21,18 +21,18 @@
 
 	var score = localStorage.getItem(game + "-score");
 	</script>
-	
+
 	<div id="mainbanner" class="announcement-banner">
 		<div class="container-banner">
 			<strong>NEW Android app: search for Tyrannosaurus Prep in the Google Play app store!</strong>
 			<button id="bannercloser">X</button>
 		</div>
 	</div>
-	
+
 	<script>
 	const bannercloser = document.getElementById('bannercloser');
 	const banner = document.getElementById('mainbanner');
-	
+
 	let bannerclosed = localStorage.getItem("bannerclosed");
 	if(bannerclosed) {
 		if (Date.now() - parseInt(bannerclosed) < 10 * 24 * 60 * 60 * 1000) {// ten days
@@ -64,15 +64,15 @@
   </div></td>
   <td><span class="buttons"><button id="reset" onClick="ResetConfirm();"><img src="images/reset.png" style="height: 15px; width: auto;" /></button></span>
   </td></tr></table>
-      
+
 	</div>
   </td>
   </tr></table>
-  
-  
+
+
 
 	</div>
-	
+
 
 
 <div id="content" class="outlined">
@@ -103,9 +103,9 @@
     </tr>
   </table>
 </div>
-		
+
     </div>
-	
+
     <div id="footer">
       <p>Copyright &copy; 2022 <a href="/">Tyrannosaurus Prep</a></p>
       <p><a href="sat.html">SAT vocab practice game</a> | <a href="gre.html">GRE vocab practice game</a></p>
@@ -116,20 +116,20 @@
 
     <script src="js/words.js"></script>
 	<script>
-	
+
 	$(document).ready(function() {
 		if (!score) {
 			score = 0;
 		} else {
 			score = parseInt(score);
 		}
-		
+
 		UpdateProgress();
 		GetNextQuestion();
 	});
 	</script>
 	<script src="js/main.js"></script>
-	
-	
+
+
   </body>
 </html>
