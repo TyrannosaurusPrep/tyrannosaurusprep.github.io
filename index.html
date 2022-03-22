@@ -16,12 +16,6 @@
   
   	<script>
 	const game = "home";
-
-	const urlParams = new URLSearchParams(window.location.search);
-	var key = urlParams.get('key');
-	if(!key) {
-		key = localStorage.getItem("key");
-	}
 	</script>
 
     <div id="header"><img src="images/logo.png" id="logo" /></div>
@@ -60,10 +54,7 @@
 		}
 		left = nowLeft;
       }
-    });
-	
-	// SAVE KEY AND DISPLAY MESSAGE AFTER USER UPGRADES
-	LoadUpgrade();
+    });	
     </script>
 		
   </body>

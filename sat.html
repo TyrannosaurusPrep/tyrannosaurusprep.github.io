@@ -20,12 +20,6 @@
 	$("body").addClass(game);
 
 	var score = localStorage.getItem(game + "-score");
-
-	const urlParams = new URLSearchParams(window.location.search);
-	var key = urlParams.get('key');
-	if(!key) {
-		key = localStorage.getItem("key");
-	}
 	</script>
 
     <div id="header">
@@ -35,7 +29,7 @@
 	<td style="width: 10%;"></td>
 	<td style="vertical-align: bottom;">
   <div id="side" class="outlined">
-      <table style="margin: auto;"><tr><td><span id="label">SAT Vocabulary</span></td><td id="upgradeCell"></td></tr></table>
+      <table style="margin: auto;"><tr><td><span id="label">SAT Vocabulary</span></td></tr></table>
 	<table><tr><td>
   <div id="progressbg">
     <div id="progressmid">
@@ -95,64 +89,9 @@
     </div>
 
 
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-		<p>For just $3.99, you'll gain access to all five levels<br />of Tyrannosaurus Prep for three months!</p>
-
-
-<p>After completing your purchase with PayPal,<br />click on the "Return to Merchant" button<br /> to instantly receive your upgrade.</p>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="JVLT88UAL9BB6">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="Three months of access to all five levels of Tyrannosaurus Prep">
-<input type="hidden" name="amount" value="3.99">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="button_subtype" value="services">
-<input type="hidden" name="tax_rate" value="0.000">
-<input type="hidden" name="shipping" value="0.00">
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-</form>
-		
-		<!--
-		or
-		
-		<a href="https://checkout.opennode.com/p/6eb24af1-5cb1-41b4-afbf-77bafe7191d2" target="_blank"><img style="width:140px;" src="https://app.opennode.com/pay-with-bitcoin.svg"/></a>
-		-->
-	<p>(PayPal will ask for your shipping address, but it won't be used.)</p>
-  </div>
-
-</div>
-
     <script src="js/words.js"></script>
 	<script>
 	
-	// Get the modal
-	var modal = document.getElementById("myModal");
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	  modal.style.display = "none";
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-		modal.style.display = "none";
-	  }
-	}
-
-	var btn;
-
 	$(document).ready(function() {
 		if (!score) {
 			score = 0;
@@ -161,7 +100,7 @@
 		}
 		
 		UpdateProgress();
-		LoadUpgrade(GetNextQuestion);
+		GetNextQuestion();
 	});
 	</script>
 	<script src="js/main.js"></script>

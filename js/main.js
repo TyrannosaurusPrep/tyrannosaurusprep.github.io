@@ -76,15 +76,6 @@ function UpdateScore(iscorrect) {
     }
     else {
         score += togo;
-		if (a.length < 140) {
-			if (score == 200) {
-				score = 199;
-				if (!upgradeAlert) {
-					modal.style.display = "block";
-					upgradeAlert = true;
-				}
-			}
-		}
     }
   }
   else {
@@ -124,53 +115,6 @@ function Submit(object) {
   return(false);
 }
 
-
-function upgradeButtons() {
-	if ($("#dino").length) return;
-	
-	$("#upgradeSpan").html('<span class="buttons"><button id="upgrade">UPGRADE</button></span> for even more words.');
-	$("#upgradeCell").html('<span class="buttons"><button id="upgrade">upgrade</button></span>');
-	// Get the button that opens the modal
-	btn = document.getElementById("upgrade")
-	// When the user clicks on the button, open the modal
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
-
-}
-
-
-function LoadUpgrade(callback=function(){}) {
-	if (key) {
-		let myScript = document.createElement("script");
-		myScript.setAttribute("src", "https://tyrannosaurusprepdev.appspot.com/js/" + key + ".js");
-		document.body.appendChild(myScript);
-		myScript.addEventListener("error", scriptError, false);
-		myScript.addEventListener("load", scriptLoaded, false);
-		
-		function scriptError() {
-			callback();
-			upgradeButtons();
-			localStorage.removeItem(key);
-		}
-				
-		function scriptLoaded() {
-			localStorage.setItem("key", key);
-			if (game == "home") {
-				$("#upgraded").html("<p>Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. Log into your PayPal account to view transaction details.<\p><p>Enjoy access to all the levels!</p><p>Make sure to save this link:<div id='upgradeUrl'>tyrannosaurusprep.com?key="+key+"</div>You can apply your upgrade to other browsers simply by visiting that url.</p><p>Please send any questions or concerns to <a href='mailto:webmaster@tyrannosaurusprep.com' style='font-size: 1.5em;'>webmaster@tyrannosaurusprep.com</a>.</p>");
-			} else if (game == "gre") {
-				greWords2();
-			} else if (game == "sat") {
-				satWords2();
-			}
-			callback();
-
-		}
-	} else {
-		callback();
-		upgradeButtons();
-	}
-}
 
 function PopulateList() {
 	var wordslist = '';
